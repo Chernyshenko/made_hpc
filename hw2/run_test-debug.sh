@@ -1,4 +1,4 @@
-FILE="resVM-debug.txt"
+FILE="res-debug.txt"
 ./matrix_debug 512 >> $FILE
 ./matrix_debug 1024 >> $FILE
 ./matrix_debug 2048 >> $FILE
