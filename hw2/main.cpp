@@ -9,7 +9,12 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
     int n;
-    cin >> n;
+    if (argc > 1) {
+	n = std::stoi(argv[1]);
+    }
+    else{
+        cin >> n;
+    }
     double *a = new double [n * n];
     double *b = new double [n * n];
     double *c = new double [n * n];
