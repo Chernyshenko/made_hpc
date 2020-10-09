@@ -1,4 +1,0 @@
-N = 512 Time for mult matrix: 0.587388
-N = 1024 Time for mult matrix: 6.32393
-N = 2048 Time for mult matrix: 128.32
-N = 4096 Time for mult matrix: 1255.23
