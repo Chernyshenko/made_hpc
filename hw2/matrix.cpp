@@ -1,4 +1,4 @@
-
+#include <cstring>
 void matrix_mult_vector(double* a, double* v, int m, int n, double *r) {
     for (int i = 0; i < m; i++) {
         double c = 0;
@@ -9,13 +9,12 @@ void matrix_mult_vector(double* a, double* v, int m, int n, double *r) {
     }
 }
 void matrix_mult_matrix(double* a, double* b, int m, int n, int k, double *r) {
-    for (int l = 0; l < k; l++) {
-      for (int i = 0; i < m; i++) {    
-            double c = 0;
-            for (int j = 0; j < n; j++) {
-                c += a[i * n + j] * b[j * k + l];
+    std::memset(r, 0, n * k * sizeof(double));
+    for (int j = 0; j < n; j++) {
+      	for (int i = 0; i < m; i++) {    
+	    for (int l = 0; l < k; l++) {
+                r[i * k + l] += a[i * n + j] * b[j * k + l];
             }
-            r[i * n + l] = c;
         }
     }
 }

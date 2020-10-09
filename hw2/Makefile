@@ -2,7 +2,7 @@ CC=g++ -std=c++14
 LINK=g++
 OPT = -O3
 DEBUG = -g
-
+LIBS = #-lcblas
 
 SOURCECPP = main.cpp matrix.cpp cblas.cpp
 OBJECTS = $(SOURCECPP:.cpp=.o)
@@ -21,10 +21,10 @@ run: matrix
 	./matrix
 
 matrix: $(OBJECTS)
-	$(LINK) $(OBJECTS) $(OPT) -lcblas -o matrix
+	$(LINK) $(OBJECTS) $(OPT) $(LIBS) -o matrix
 
 matrix_debug: $(DEBOBJECTS)
-	$(LINK) -g $(DEBOBJECTS) $(DEBUG) -lcblas -o matrix_debug
+	$(LINK) -g $(DEBOBJECTS) $(DEBUG) $(LIBS) -o matrix_debug
 
 clean:
 	rm -rf *.o matrix matrix_debug

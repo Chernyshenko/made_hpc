@@ -1,3 +1,4 @@
+#ifdef USE_CBLAS
 #include <cblas.h>
 
 void matrix_mult_matrix_cblas(double* a, double* b, int m, int k, int n, double *r) {
@@ -7,3 +8,4 @@ void matrix_mult_matrix_cblas(double* a, double* b, int m, int k, int n, double 
     cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, 
                 m, n, k, alpha, a, k, b, n, beta, r, n);
 }
+#endif
